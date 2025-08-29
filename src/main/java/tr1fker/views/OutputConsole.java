@@ -12,4 +12,12 @@ public class OutputConsole {
 6. Выйти.
 ---------------------------""");
     }
+
+    public void printINumberOption(){
+        System.out.print("Введите номер опции:");
+    }
+
+    public void printSuccessExit(){
+        System.out.print("Успешное завершение работы!");
+    }
 }
