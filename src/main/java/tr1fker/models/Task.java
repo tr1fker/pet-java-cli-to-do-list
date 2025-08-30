@@ -56,4 +56,8 @@ public class Task {
     public void setStatus(Status status) {
         this.status = status;
     }
+
+    public int compareTo(Task task){
+        return Integer.compare(this.id, task.id);
+    }
 }
