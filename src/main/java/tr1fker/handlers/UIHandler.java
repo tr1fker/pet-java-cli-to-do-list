@@ -47,6 +47,6 @@ public class UIHandler {
 
     public void stopConsole(){
         this.isRunning = false;
-        this.outputConsole.printCustomMenu();
+        this.outputConsole.printSuccessExit();
     }
 }
