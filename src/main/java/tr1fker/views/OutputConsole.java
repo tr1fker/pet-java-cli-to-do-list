@@ -1,5 +1,7 @@
 package tr1fker.views;
 
+import tr1fker.models.Priority;
+
 public class OutputConsole {
     public void printCustomMenu(){
         System.out.println("""
@@ -19,5 +21,24 @@ public class OutputConsole {
 
     public void printSuccessExit(){
         System.out.print("Успешное завершение работы!");
+    }
+
+    public void printINameTask(){
+        System.out.print("Введите название задачи:");
+    }
+
+    public void printPriorities(Priority[] priorities){
+        int counter = 0;
+        for (Priority priority : priorities){
+            System.out.println(++counter + ". " + priority);
+        }
+    }
+
+    public void printINumber(){
+        System.out.print("Введите номер:");
+    }
+
+    public void printIDescTask(){
+        System.out.print("Введите описание задачи:");
     }
 }
