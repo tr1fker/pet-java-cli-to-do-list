@@ -9,11 +9,11 @@ public enum Status {
         this.status = status;
     }
 
-    public String getStatus() {
+    public String getValue() {
         return this.status;
     }
 
-    public void setStatus(Status status){
-        this.status = status.getStatus();
+    public void setValue(Status status){
+        this.status = status.getValue();
     }
 }

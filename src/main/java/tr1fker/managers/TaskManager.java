@@ -1,10 +1,7 @@
 package tr1fker.managers;
 
-import tr1fker.models.Priority;
-import tr1fker.models.Status;
 import tr1fker.models.Task;
 
-import java.util.HashSet;
 import java.util.Set;
 import java.util.TreeSet;
 
@@ -20,5 +17,9 @@ public class TaskManager {
     public void add(Task task){
         task.setId(++maxId);
         this.tasks.add(task);
+    }
+
+    public Set<Task> getTasks(){
+        return this.tasks;
     }
 }

@@ -7,8 +7,8 @@ public class Task implements Comparable<Task> {
     private String description;
     private Status status;
 
-    public Task(int id, String name, Priority priority, String description, Status status) {
-        this.id = id;
+    public Task(String name, Priority priority, String description, Status status) {
+        this.id = 0;
         this.name = name;
         this.priority = priority;
         this.description = description;
@@ -60,5 +60,10 @@ public class Task implements Comparable<Task> {
     @Override
     public int compareTo(Task task){
         return Integer.compare(this.id, task.id);
+    }
+
+    @Override
+    public String toString() {
+        return  " №:" + this.id + " Название:" + this.name + " Приоритет:" + this.priority.getValue() + " Описание:" + this.description + " Статус:" + this.status.getValue();
     }
 }

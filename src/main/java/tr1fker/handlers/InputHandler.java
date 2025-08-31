@@ -1,6 +1,7 @@
 package tr1fker.handlers;
 
 import tr1fker.models.Priority;
+import tr1fker.models.Status;
 import tr1fker.views.OutputConsole;
 
 import java.util.Scanner;
@@ -33,6 +34,14 @@ public class InputHandler {
 
         int choice = this.inputInteger();
 
-        return priorities[choice];
+        return priorities[choice - 1];
+    }
+
+    public Status inputStatus(){
+        Status[] statuses = Status.values();
+
+        int choice = this.inputInteger();
+
+        return statuses[choice - 1];
     }
 }
