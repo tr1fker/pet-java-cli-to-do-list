@@ -68,4 +68,23 @@ public class OutputConsole {
             System.out.println(++counter + ". " + status.getValue());
         }
     }
+
+    public void printINumberTask(){
+        System.out.print("Введите номер задачи:");
+    }
+
+    public void printUpdateTaskMenu(){
+        System.out.println("""
+---Меню обновления задачи---
+1. Изменить название
+2. Изменить приорите
+3. Изменить описание
+4. Изменить статус
+5. Вернуться
+----------------------------""");
+    }
+
+    public void printSuccessUpdateTask(){
+        System.out.println("Задача успешно изменена!");
+    }
 }
