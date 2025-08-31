@@ -22,4 +22,12 @@ public class TaskManager {
     public Set<Task> getTasks(){
         return this.tasks;
     }
+
+    public Task getTask(int id){
+        return this.tasks.stream().filter(task -> task.getId() == id).findFirst().orElse(null);
+    }
+
+    public void putTask(Task task){
+        this.tasks.add(task);
+    }
 }
