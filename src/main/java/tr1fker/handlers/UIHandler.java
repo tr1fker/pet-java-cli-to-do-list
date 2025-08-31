@@ -40,6 +40,7 @@ public class UIHandler {
                     this.createTask();
                     break;
                 case 2:
+                    this.switchToFilterTasksMenu();
                     break;
                 case 3:
                     break;
@@ -68,6 +69,12 @@ public class UIHandler {
         Task newTask = new Task(name, priority, description, Status.NEW);
 
         this.taskManager.add(newTask);
+    }
+
+    public void switchToFilterTasksMenu(){
+        FilterTasksUIHandler filterTasksUIHandler = new FilterTasksUIHandler(this.inputHandler,
+                this.taskManager, this.outputConsole);
+        filterTasksUIHandler.start();
     }
 
     public void stopConsole(){
