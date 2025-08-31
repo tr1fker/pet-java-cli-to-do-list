@@ -1,6 +1,6 @@
 package tr1fker.models;
 
-public class Task {
+public class Task implements Comparable<Task> {
     private int id;
     private String name;
     private Priority priority;
@@ -57,6 +57,7 @@ public class Task {
         this.status = status;
     }
 
+    @Override
     public int compareTo(Task task){
         return Integer.compare(this.id, task.id);
     }
