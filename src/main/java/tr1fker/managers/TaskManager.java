@@ -30,4 +30,8 @@ public class TaskManager {
     public void putTask(Task task){
         this.tasks.add(task);
     }
+
+    public void removeTask(int id){
+        this.tasks.removeIf(task -> task.getId() == id);
+    }
 }
