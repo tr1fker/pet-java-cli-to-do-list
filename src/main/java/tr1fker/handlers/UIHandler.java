@@ -46,6 +46,7 @@ public class UIHandler {
                     this.switchToUpdateTaskMenu();
                     break;
                 case 4:
+                    this.removeTask();
                     break;
                 case 5:
                     break;
@@ -82,6 +83,13 @@ public class UIHandler {
         UpdateTaskUIHandler updateTaskUIHandler = new UpdateTaskUIHandler(this.inputHandler,
                 this.taskManager, this.outputConsole);
         updateTaskUIHandler.start();
+    }
+
+    public void removeTask(){
+        this.outputConsole.printINumberTask();
+        int taskId = this.inputHandler.inputInteger();
+        this.taskManager.removeTask(taskId);
+        this.outputConsole.printSuccessRemoveTask();
     }
 
     public void stopConsole(){
