@@ -87,4 +87,8 @@ public class OutputConsole {
     public void printSuccessUpdateTask(){
         System.out.println("Задача успешно изменена!");
     }
+
+    public void printSuccessRemoveTask(){
+        System.out.println("Задача успешно удалена!");
+    }
 }
