@@ -91,4 +91,8 @@ public class OutputConsole {
     public void printSuccessRemoveTask(){
         System.out.println("Задача успешно удалена!");
     }
+
+    public void printTask(Task task){
+        System.out.println(task);
+    }
 }
