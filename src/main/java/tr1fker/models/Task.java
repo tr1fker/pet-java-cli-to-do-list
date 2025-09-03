@@ -14,6 +14,8 @@ public class Task implements Comparable<Task> {
         this.description = description;
         this.status = status;
     }
+
+    public Task(){}
     
 
     public int getId() {
