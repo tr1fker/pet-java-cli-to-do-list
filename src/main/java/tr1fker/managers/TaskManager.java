@@ -27,6 +27,10 @@ public class TaskManager {
         return this.tasks.stream().filter(task -> task.getId() == id).findFirst().orElse(null);
     }
 
+    public Task getTask(String name){
+        return this.tasks.stream().filter(task -> task.getName().equals(name)).findFirst().orElse(null);
+    }
+
     public void putTask(Task task){
         this.tasks.add(task);
     }
