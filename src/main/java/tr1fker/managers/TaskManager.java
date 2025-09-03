@@ -1,6 +1,7 @@
 package tr1fker.managers;
 
 import tr1fker.models.Task;
+import tr1fker.repositories.TaskStorage;
 
 import java.util.Set;
 import java.util.TreeSet;
@@ -9,9 +10,12 @@ public class TaskManager {
     private Set<Task> tasks;
     private int maxId;
 
-    public TaskManager(){
+    private TaskStorage taskStorage;
+
+    public TaskManager(TaskStorage taskStorage){
         this.tasks = new TreeSet<>();
         this.maxId = 0;
+        this.taskStorage = taskStorage;
     }
 
     public void add(Task task){
@@ -37,5 +41,16 @@ public class TaskManager {
 
     public void removeTask(int id){
         this.tasks.removeIf(task -> task.getId() == id);
+    }
+
+    public void loadTasks(){
+        this.tasks = this.taskStorage.loadTasks();
+        for(Task task : this.tasks){
+            task.setId(++this.maxId);
+        }
+    }
+
+    public void saveTasks(){
+        this.taskStorage.saveTasks(this.tasks);
     }
 }

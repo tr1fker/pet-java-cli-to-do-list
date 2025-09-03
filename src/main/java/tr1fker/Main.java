@@ -3,6 +3,7 @@ package tr1fker;
 import tr1fker.handlers.InputHandler;
 import tr1fker.handlers.UIHandler;
 import tr1fker.managers.TaskManager;
+import tr1fker.repositories.TaskStorage;
 import tr1fker.views.OutputConsole;
 
 public class Main {
@@ -11,10 +12,14 @@ public class Main {
 
         InputHandler inputHandler = new InputHandler(outputConsole);
 
-        TaskManager taskManager = new TaskManager();
+        TaskStorage taskStorage = new TaskStorage();
+
+        TaskManager taskManager = new TaskManager(taskStorage);
 
         UIHandler uIHandler = new UIHandler(inputHandler, taskManager, outputConsole);
 
+        taskManager.loadTasks();
         uIHandler.startConsole();
+        taskManager.saveTasks();
     }
 }
