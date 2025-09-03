@@ -49,6 +49,7 @@ public class UIHandler {
                     this.removeTask();
                     break;
                 case 5:
+                    this.searchTask();
                     break;
                 case 6:
                     this.stopConsole();
@@ -90,6 +91,13 @@ public class UIHandler {
         int taskId = this.inputHandler.inputInteger();
         this.taskManager.removeTask(taskId);
         this.outputConsole.printSuccessRemoveTask();
+    }
+
+    public void searchTask(){
+        this.outputConsole.printINameTask();
+        String name = this.inputHandler.inputString();
+        Task task = this.taskManager.getTask(name);
+        this.outputConsole.printTask(task);
     }
 
     public void stopConsole(){
